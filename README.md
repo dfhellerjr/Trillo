@@ -13,5 +13,3 @@ In addition to the course material I used the following in my development proces
 - Gimp 2.10 for image importing/manipulation
 - Inkscape 0.92 for svg creation
 - Codepen for testing flexbox layouts and various other ideas
-
-It should be noted that my use of BEM in the popup section remains somewhat suspect but, as I'm still a "work in progress" I will continue work to improve that aspect of my coding with future practice.
