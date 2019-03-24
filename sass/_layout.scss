@@ -1,0 +1,195 @@
+////////////////////////////////////////
+// LANDING PAGE
+// Site container 
+.container
+{
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-dark);
+    min-height: 50rem;
+
+    // @1200px device width
+    @media only screen and (max-width: $bp-largest) 
+    {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    // @500px device width
+    @media only screen and (max-width: $bp-smaller) 
+    {
+        overflow: hidden;
+    }   
+}
+
+// Header
+.header
+{
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // @600px device width
+    @media only screen and (max-width: $bp-small) 
+    {
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 10rem;        
+    } 
+}
+
+// Content 
+.content
+{
+    display: flex;
+    flex: 1; 
+
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {
+        flex-direction: column;
+    }   
+}
+
+// Sidebar
+.sidebar
+{
+    background-color: var(--color-grey-dark-1);
+    // 18% of available row area in content container
+    flex: 0 0 18%;
+
+    // align items vertically (side nav-list and legal)
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;       
+}
+
+// Hotel view (main)
+.hotel-view
+{
+    background-color: #fff;
+    // grow to all remaining available space in row (in x direction)
+    flex: 1;    // same as 1 1 auto
+}
+
+// Detail section
+.detail
+{
+    // items side-by-side
+    display: flex; 
+    font-size: 1.4rem;
+    padding: 4.5rem; 
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line); 
+    
+    // @1000px device width
+    @media only screen and (max-width: $bp-medium-large) 
+    {
+        padding: 4.5rem 0rem;    
+    } 
+
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {
+        padding: 4.5rem 1rem;    
+    } 
+        
+    // @600px device width
+    @media only screen and (max-width: $bp-small) 
+    {
+        flex-direction: column;
+    }
+    
+    // @400px device width
+    @media only screen and (max-width: $bp-smallest) 
+    {
+        padding: 2.5rem 0;    
+    } 
+}
+
+// Hotel description
+.description
+{
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    // item to occupy 60% of container width (no grow/shrink)
+    flex: 0 0 60%;
+    margin-right: 4.5rem; 
+    
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {
+        padding: 2rem 0;
+        margin-right: .5rem; 
+    }
+    
+    // @600px device width
+    @media only screen and (max-width: $bp-small) 
+    {
+        margin-bottom: 3rem; 
+    } 
+}
+
+.description .paragraph
+{
+    // @1100px device width
+    @media only screen and (max-width: $bp-large) 
+    {
+        font-size: 1.8rem;
+    } 
+    
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {
+        padding-left: 1rem;
+    }  
+}
+
+// User reviews
+.user-reviews
+{
+    // allow items to grow to fill remainder of available space in container
+    flex: 1;
+   
+    // display items in columns
+    display: flex;   
+    flex-direction: column;
+    align-items: center; 
+
+    // @1100px device width
+    @media only screen and (max-width: $bp-large) 
+    {
+        font-size: 1.8rem;
+    }  
+}
+
+////////////////////////////////////////
+// POP-UP SECTION
+.popup
+{        
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 1%;
+    background-color: var(--color-popup-primary);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s; 
+
+    &:target 
+    {
+        opacity: 1;
+        visibility: visible;
+        z-index: 9999;
+    }
+}

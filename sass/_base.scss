@@ -1,0 +1,84 @@
+
+:root
+{
+    // Custom properties (CSS variables)
+    /* colors */
+    --color-primary: #eb2f64;
+    --color-primary-light: #FF3366;
+    --color-primary-lighter: #ff99b3;
+    --color-primary-dark: #BA265D; 
+
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --color-popup-primary: #660066;
+    --color-popup-dark: #e6e6e6;
+    --color-popup-light: #e6f9ff;
+    
+    /* box-shadows */ 
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+    /* border-bottom solid line */
+    --line: 1px solid var(--color-grey-light-2);    
+}
+
+// SASS variables for media break-points
+/* 1em = 16px */
+$bp-largest: 75em;          // 1200px
+$bp-large: 68.75em;         // 1100px
+$bp-medium-large: 62.5em;   // 1000px
+$bp-medium: 56.25em;        //  900px
+$bp-medium-small: 43.75em;  //  700px
+$bp-small: 37.5em;          //  600px
+$bp-smaller: 31.25em;       //  500px
+$bp-smallest: 25em;         //  400px
+
+// Initialize 
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after
+{
+    box-sizing: inherit;
+}
+
+html
+{
+    box-sizing: border-box;
+    font-size: 62.5%;       // 1rem = 10px
+
+    // 1100px
+    @media only screen and (max-width: $bp-large) 
+    {
+        font-size: 50%;
+    }
+}
+
+body
+{
+    // font properties
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey-dark-2);
+
+    // background
+    background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    // height
+    min-height: 100vh;
+}

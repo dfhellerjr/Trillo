@@ -1,0 +1,2521 @@
+////////////////////////////////////
+// Logo
+.logo
+{
+    height: 3.25rem;
+    margin-left: 2rem;
+
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {
+        margin-right: 2rem;  
+    } 
+}
+
+////////////////////////////////////
+// Search
+.search
+{   
+    display: flex;
+    flex: 0 0 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    // @600px device width
+    @media only screen and (max-width: $bp-small) 
+    {        
+        flex: 0 0 80%;
+        order: 1;
+        
+        margin: 0 auto;
+        margin-bottom: .5rem;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+    } 
+
+    &__input
+    {
+        flex: 0 0 90%;
+        // inputs must explicity inherit font properties
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: .7rem 2rem;
+        // rounded corners
+        border-radius: 100px;
+        transition: all .2s;
+        // extend right margin to include the icon
+        margin-right: -3.25rem;
+        margin-left: -1.5rem;
+
+        // on input focus (click)
+        &:focus
+        {
+            outline: none;
+            // expand to full width
+            width: 100%;
+            // slightly darken background
+            background-color: #e7e4e4;
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            padding: 1rem 2rem 1rem 5rem;
+        }
+
+        // darken text for placeholder (not fully supported)
+        &::-webkit-input-placeholder
+        {
+            font-weight: 600;
+            color: var(--color-grey-dark-3);
+        }
+    }
+
+    // next sibling (ie: button) of the input on focus
+    &__input:focus + &__button
+    {
+        // slightly darken background 
+        background-color: #e7e4e4;
+    }
+
+    // close button and suggestions drop-down are hidden when placeholder is being shown
+    &__input:placeholder-shown ~ &__btn-close,
+    &__input:placeholder-shown ~ .suggestions
+    {
+        visibility: hidden;
+    }
+
+    &__button
+    {
+        border: none;
+        background-color: var(--color-grey-light-2);
+        transition: all .2s;
+
+        &:focus
+        {
+            outline: none;
+        }
+
+        // show suggestions drop-down and close button on button focus
+        &:focus ~ .suggestions,
+        &:focus ~ .search__btn-close          
+        {
+            visibility: visible;
+        }       
+
+        &:active
+        {
+            // move button down slightly when active   
+            transform: translateY(2px);
+        }
+    }
+
+    &__icon
+    {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-grey-dark-3);
+    }
+
+    // allow user to close the drop-down
+    &__btn-close
+    {
+        height: 3rem;
+        width: 6.5rem;
+        color: var(--color-primary);
+        margin-left: 2rem;
+        border: 1px solid var(--color-grey-light-3);        
+        background-color: var(--color-grey-light-2);  
+        border-radius: 100px;
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        { 
+            width: 5.5rem;   
+        }
+    }
+
+    &__btn-close:focus
+    {
+        outline: none;      
+    }
+
+    // button on hover
+    &__btn-close:hover
+    {
+        font-size: 120%;
+        color: var(--color-primary-dark);
+        padding-bottom: 2px;
+        background-color: var(--color-grey-light-4);
+        transform: scale(1.1) translateY(2px);
+    }
+}
+
+////////////////////////////////////
+// Suggestions
+.suggestions
+{
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;    
+    list-style: none;
+    width: 100%;
+    box-shadow: var(--shadow-dark);
+    z-index: 1000;
+    transition: all .2s;
+
+    // @700px device width
+    @media only screen and (max-width: $bp-medium-small) 
+    {
+        width: 110%;         
+    }
+
+    // @500px device width
+    @media only screen and (max-width: $bp-smaller) 
+    {
+        width: 105%;         
+    }
+
+    &__item 
+    {
+        display: flex;
+        padding: 1.5rem 1rem;       
+        border: 1px solid var(--color-grey-light-3); 
+        transition: all .2s;      
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {
+            padding: .5rem;
+            height: 7rem;
+        }
+
+        // 400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {
+            padding: .5rem;
+            height: 8rem;
+        }
+        
+        &:hover 
+        {
+            background-color: var(--color-grey-light-2);
+            margin-bottom: var(--line);                               
+        }
+
+        // hover
+        &:hover .suggestions__name
+        {
+            font-size: 165%;
+            padding-bottom: 3px;
+            color: var(--color-grey-dark-1);
+
+            // @900px device width
+            @media only screen and (max-width: $bp-medium) 
+            {
+                font-size: 160%;      
+            }            
+
+            // @700px device width
+            @media only screen and (max-width: $bp-medium-small) 
+            {
+                font-size: 140%; 
+            }
+
+            // @600px device width
+            @media only screen and (max-width: $bp-small) 
+            {
+                font-size: 190%;      
+            }
+
+            // @500px device width
+            @media only screen and (max-width: $bp-smaller) 
+            {
+                font-size: 150%; 
+            }
+
+            // @400px device width
+            @media only screen and (max-width: $bp-smallest) 
+            {
+                font-size: 185%; 
+            }
+        }
+    } 
+
+    &__link:link,
+    &__link:visited
+    {
+        text-decoration: none;
+        display: flex;
+        flex: 1;
+        align-items: center;        
+        color: var(--color-grey-dark-3);
+    }
+
+    &__link 
+    {       
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {                                        
+            flex-wrap: wrap;
+        }        
+    }
+
+    &__link &__photo
+    {
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {                                        
+            // hide photo
+            visibility: collapse;                  
+        }
+    }
+
+    &__name 
+    {
+        flex: 1;
+        margin-right: auto;
+        padding-left: 2rem;
+        font-size: 160%;
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {          
+            font-size: 150%;
+        }
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {
+            flex: 1 0 60%;
+            padding-left: .5rem;
+            order: -1;
+        }
+
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {
+            flex: 1 0 62%;
+            font-size: 130%;
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small)
+        {       
+            font-size: 180%;
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller)
+        {
+            font-size: 140%;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {
+            flex: 1 0 100%;
+            font-size: 175%;
+        }
+    }
+
+    &__photo
+    {
+        align-self: stretch;
+        height: 8rem;
+        width: 10rem; 
+        margin-left: 1rem; 
+        margin-right: auto;        
+    }
+
+    &__photo:hover
+    {
+        transform: scale(1.40);
+    }
+
+    &__location 
+    {        
+        display: flex;
+        align-items: center;
+        color: var(--color-primary);
+                
+        &::before 
+        {
+            content: '';
+            display: inline-block;
+            background-image: url(../img/location-pin.svg);
+            background-size: cover;
+            width: 1.5rem;
+            height: 1.5rem;
+
+            // apply color to icon 
+            @supports ( -webkit-mask-image: url()) or (mask-image: url()) 
+            {
+                background-color: var(--color-primary);
+                -webkit-mask-image: url(../img/location-pin.svg);
+                -webkit-mask-size: cover;
+                mask-image: url(../img/location-pin.svg);
+                mask-size: cover;
+                background-image: none;
+            }                      
+        }
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {
+            flex: 1 0 40%;
+            margin-left: -10rem;
+            font-size: 1.4rem;
+        }
+
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {
+            flex: 1 0 42%;
+            margin-left: -11.5rem
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        { 
+            flex: 1 0 45%;
+            margin-left: -12rem;             
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {
+            margin-left: -10.5rem;
+            margin-top: -5.5rem;
+        }
+    }
+}
+
+// drop-down visible on hover
+.suggestions:focus 
+{
+    visibility: visible;
+}
+
+////////////////////////////////////
+// User Navigation
+.user-nav
+{   
+    display: flex;    
+    align-self: stretch;    // align items to top of box 
+    position: relative;
+
+    // style all direct children of user-nav
+    & > *
+    {        
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 2rem;
+        cursor: pointer;
+    }
+
+    // style all direct children of user-nav on hover
+    & > *:hover
+    {
+        // darken background color 
+        background-color: var(--color-grey-light-2);    
+    }
+
+    &__icon-box
+    {
+        // position relative so that notifications can be absolutely positioned
+        position: relative;         
+    }
+
+    // chat messages visible on hover
+    &__icon-box:hover .chat-messages__list
+    {
+        visibility: visible;
+        background-color: var(--color-grey-light-1); 
+    }
+
+    &__icon
+    {
+        height: 2.25rem;
+        width: 2.25rem; 
+        fill: var(--color-grey-dark-2); 
+        
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {
+            height: 2.5rem;
+            width: 2.5rem; 
+        }
+        
+        // @900px device width  
+        @media only screen and (max-width: $bp-medium) 
+        {
+            height: 3rem;
+            width: 3rem; 
+        }   
+    }
+
+    &__notification
+    {
+        // align text within span element
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+
+        // absolutely positioned within icon-box
+        position: absolute;
+        top: 1.5rem;
+        right: .8rem;       
+        font-size: .8rem;
+        color: #fff;
+        height: 1.7rem;
+        width: 1.7rem;
+        border-radius: 50%;     // circular
+        background-color: var(--color-primary);
+        
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {
+            top: 1rem;
+            right: 0rem;
+            font-size: 1rem;
+            height: 2.25rem;
+            width: 2.25rem;            
+        }
+        
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {
+            top: 0rem;
+            right: 0rem;
+        }   
+    }
+
+    &__user-photo
+    {
+        // allow border to increase box-size
+        box-sizing: content-box;
+        height: 4rem;
+        border-radius: 50%;     // circular
+        border: 2px solid var(--color-grey-light-4);    
+        margin-right: 1rem;
+        transition: 1s;
+    }
+
+    // hover events
+    &__user-photo:hover
+    {
+        transform: scale(1.5);   
+    }
+
+    // drop-down list visible
+    &__user:hover .user__list
+    {
+        background-color: var(--color-grey-light-2); 
+        color: var(--color-grey-dark-1);
+        z-index: 2000;
+        visibility: visible;
+    } 
+}
+
+////////////////////////////////////
+// Chat messages
+.chat-messages
+{
+    &__list 
+    {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        right: 0;       
+        width: 50rem;   
+        background-color: #fff;
+        box-shadow: var(--shadow-dark);
+        visibility: hidden;        
+        z-index: 100; 
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            top: 0rem;
+            right: -3rem;
+            width: 35rem;
+        }      
+        
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {
+            top: 0rem;
+            right: -3rem;
+            width: 30rem;
+        }       
+    }
+
+    &__item
+    {
+        display: flex;
+        align-items: center;
+        padding: 1rem;       
+        color: var(--color-grey-dark-3);
+        border: 1px solid var(--color-grey-light-4);         
+        z-index: 100;
+        
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {           
+            flex: 1 0 100%;
+            top: 0rem;
+            right: -2rem;
+        }
+    }
+
+    &__item:hover
+    {
+        background-color: #fff;
+    }
+
+    &__photo
+    {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        margin-right: 2rem;
+        transition: all .2s;
+
+        // @400px device width
+        // hide photo
+        @media only screen and (max-width: $bp-smallest) 
+        {
+            visibility: collapse; 
+            height: 0;
+            width: 0;      
+        }   
+    }
+
+    &__user-name
+    {
+        text-decoration: none;
+        color: var(--color-primary);
+        font-weight: 700; 
+    }
+
+    &__text
+    {        
+        font-size: 1.2rem;
+    }
+
+    // hover events
+    &__photo:hover
+    {
+        transform: scale(1.1);
+    }
+
+    &__item:hover &__user-name
+    {
+        font-size: 1.75rem;
+        color: var(--color-primary-dark);
+    }
+
+    &__item:hover &__text
+    {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+
+////////////////////////////////////
+// User 
+.user
+{ 
+    &:hover  
+    {
+        color: var(--color-grey-dark-1); 
+    }
+
+    &__list
+    {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        right: 0%;              
+        text-align: center;
+        list-style: none;
+        text-decoration: none;
+        background-color: #fff;         
+        visibility: hidden;        
+        z-index: 100;    
+    }
+
+    &__item
+    {     
+        height: 3rem;
+        width: 12.5rem;           
+    }
+
+    &__link
+    {        
+        display: flex;
+        height: 3rem;
+        width: 12.5rem;
+        font-weight: 600;       
+        color: var(--color-grey-dark-2);
+        text-decoration: none;
+        padding: 0 1rem;  
+        border: 1px solid var(--color-grey-light-4)    
+    }
+
+    &__link:hover 
+    {
+        transform: scale(1.2);
+        color: rgba(0, 0, 0, 0.788);
+        background-color: var(--color-grey-light-4);
+    }
+
+    &__icon 
+    { 
+        height: 2.5rem;
+        width: 2rem;
+        margin-right: 2rem;
+        order: -1; 
+    } 
+}   
+
+////////////////////////////////////
+// Side Navigation
+.side-nav
+{
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+
+    // @1100px device width 
+    @media only screen and (max-width: $bp-large) 
+    {
+        font-size: 1.8rem;
+    } 
+
+    // @900px device width 
+    @media only screen and (max-width: $bp-medium) 
+    {
+        display: flex;
+        margin: 0;
+    } 
+
+    // @400px device width 
+    @media only screen and (max-width: $bp-smallest) 
+    {
+        font-size: 1.4rem;
+    } 
+
+    &__item
+    {
+        // set as position relative so that the ::before pseudo-class can be
+        // absolutely positioned
+        position: relative;
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {
+            flex: 1;
+        } 
+
+        // add some margin to the 2nd & 3rd items        
+        &:nth-child(2),
+        &:nth-child(3)
+        {
+            margin-bottom: .5rem; 
+            
+            // @900px device width
+            @media only screen and (max-width: $bp-medium) 
+            {
+                margin-bottom: 0;
+            } 
+        }       
+    }
+
+    // *** Side Navigation Hover Effect *** //
+    // place a 3px wide background in front of the menu item
+    &__item::before
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background: var(--color-primary);
+        // hide background initially
+        transform: scaleY(0);
+        // multi-part transition on hover (for height, width, background) with timing intervals 
+        transition: transform .2s,                          // scale (height)
+                    width .4s cubic-bezier(1,0,0,1) .2s,    // width (bezier-curve) 
+                    background-color .1s;	                // background  
+    }
+
+    // on hover (and the default active item)
+    &__item:hover::before,
+    &__item--active::before
+    {
+        // display the full height of the background ...
+        transform: scaleY(1);
+        // ... and the full width
+        width: 100%;
+    }
+
+    // set a lighter background for the items prior to them becoming active
+    &__item:active::before
+    {
+        background: var(--color-primary-light);    
+    }
+
+    &__link:link,
+    &__link:visited
+    {
+        color: var(--color-grey-light-1);       
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1.5rem 3rem;
+
+        // center items (icon and span)
+        display: flex;
+        align-items: center;
+
+        // for z-index and effect to work
+        position: relative;
+        z-index: 10;
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            flex-direction: column;
+            padding: 1.5rem .5rem;
+        } 
+    }
+
+    &__icon
+    {
+        height: 1.75rem;
+        width: 1.75rem;
+        margin-right: 2rem;
+        fill: currentColor; 
+
+        // @1100px device width 
+        @media only screen and (max-width: $bp-large) 
+        {
+            margin-right: 1.5rem;
+        } 
+        
+        // @600px device width 
+        @media only screen and (max-width: $bp-small) 
+        {
+            margin-right: 0;
+            margin-bottom: .7rem;
+            height: 1.5rem;
+            width: 1.5rem;
+        } 
+
+        // @500px device width 
+        @media only screen and (max-width: $bp-smaller) 
+        {
+            display: none;
+        } 
+    }
+}
+
+////////////////////////////////////
+// Legal
+.legal
+{
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4); 
+    text-align: center;
+    padding: 2.5rem;
+
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {
+        display: none;
+    } 
+}
+
+////////////////////////////////////
+// Gallery
+.gallery
+{
+    display: flex;
+
+    &__item
+    {
+        position: relative;
+        display: flex;
+    }
+
+    // dark gradient at bottom to make caption more visible (hotel-3)
+    &__photo-overlay
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(transparent 61%,  rgba(0, 0, 0, 0.1),  
+                    rgba(0, 0, 0, 0.75)); 
+        opacity: 0;   
+    }
+
+    &__photo
+    {
+        display: block;
+        // fill the box with the image
+        width: 100%;
+        height: 100%;       
+    }
+   
+    &__caption
+    {
+        position: absolute;
+        top: 89%;
+        left: 0;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--color-grey-light-2);
+        text-align: center;
+        width: 100%;
+        opacity: 0;
+        transform: translate(-50%, -48%);
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {
+            font-size: 2.25rem;
+        } 
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            font-size: 1.8rem;
+        }
+        
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {
+            font-size: 1.5rem;
+        }
+        
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {
+            font-size: 1.25rem;
+        } 
+    }
+
+    // hover events
+    &__item:hover 
+    {
+        transform: scale(1.15);
+        box-shadow: 0 1rem 1.5rem rgba(#000, .2);
+        transition: .5s;
+        z-index: 1;
+    }
+      
+    // make gradient visisible
+    &__item:hover &__photo-overlay
+    {
+        opacity: 1;
+    }
+   
+    // slide caption in
+    &__item:hover &__caption
+    {       
+        left: 50%; 
+        opacity: 2;
+        transition: 1s;
+        border: 0;
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {
+            left: 53%; 
+        } 
+    }
+}
+
+////////////////////////////////////
+// Hotel Overview
+.overview
+{
+    display: flex;
+    align-items: center;
+    border-bottom: var(--line);
+
+    // @600px device width
+    @media only screen and (max-width: $bp-small) 
+    {                      
+        flex-wrap: wrap;
+        flex: 0 0 100%;
+
+        & > *
+        {
+            flex: 0 0 50%;
+        }
+    }  
+    
+    &__heading
+    {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {           
+            font-size: 2rem; 
+            font-weight: 400;  
+            padding: 1rem 1.5rem;
+        }  
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            font-size: 1.75rem;
+            padding: 1rem 0 1rem .75rem;
+        }  
+    }
+
+    &__stars
+    {       
+        // margin right for all remaining available space in container
+        margin-right: auto;
+        // flex box for proper vertical alignment with other items
+        display: flex;
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {                      
+          align-self: center; 
+          justify-content: center;
+          margin-left: auto;  
+        }         
+    }
+
+    &__icon-star,
+    &__icon-location
+    {
+        // set height, width & color of icons
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+    }
+
+    &__location
+    {
+        // flexbox to align items
+        display: flex;
+        font-size: 1.2rem;
+        align-items: center;
+
+        // 1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {                      
+            font-size: 2rem;
+        }         
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            flex: 0 0 50%;
+            padding-left: 3rem;
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {           
+            font-size: 1.75rem;
+            padding-left: 1.5rem;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            padding: 1rem .5rem;
+        }
+    }
+
+    &__icon-location
+    {
+        // add separation (right side) to icon
+        font-size: 2rem;
+        margin-right: .5rem;
+    }
+
+    &__rating
+    {
+        // stack items vertically and center  
+        display: flex;
+        flex-direction: column;       
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+         
+        color: #fff;
+        margin-left: 3rem;
+        padding: 0 1.5rem 0 2.25rem;      
+        background-color: var(--color-primary);       
+        position: relative; 
+           
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            flex: 0 0 15%;
+            padding: 0 .5rem;
+            margin-left: 17%;
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {           
+            flex: 0 0 17%;
+        } 
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            flex: 0 0 19%;
+        } 
+    }
+
+    // border cut-out
+    &__rating::after 
+    {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-left: 1.75rem solid white;
+        border-top: 3.5rem solid transparent;
+        border-bottom: 3.5rem solid transparent;
+        // cover left border
+        transform: translateX(-1px); 
+          
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            border-left: 1.25rem solid white;
+            border-top: 3rem solid transparent;
+            border-bottom: 2.75rem solid transparent;   
+        }
+    }
+
+    &__rating-average
+    {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 1.25;
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {           
+            font-size: 2.5rem;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            padding-left: .5rem;
+        }
+    }
+
+    &__rating-count
+    {
+        font-size: .8rem;
+        text-transform: uppercase;
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {           
+            font-size: 1.2rem;
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            padding-bottom: .5rem;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            font-size: 1rem;
+            padding-left: 1rem;
+        }
+    }
+}
+
+////////////////////////////////////////
+// BUTTON INLINE
+.btn-inline 
+{
+    border: none;
+    color: var(--color-primary);
+    // inherit the font-size of the container the button is contained in
+    font-size: inherit;
+    // set the border color to that of the current text color
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    // allow background color of container to show through
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+
+    // for bottom button
+    & span 
+    {
+        margin-left: 3px;
+        transition: margin-left .2s;
+    }
+
+    &:hover 
+    {
+        color: var(--color-grey-dark-1);
+
+        // bottom button
+        span 
+        {
+            margin-left: 8px;
+        }
+    }
+
+    // animate on focus (click)
+    &:focus 
+    {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+// Create the pulsate animation
+@keyframes pulsate 
+{
+    // start
+    0% 
+    {
+        transform: scale(1);
+        box-shadow: none;
+        transform-origin: 0 0;
+        filter: none;
+    }
+    // middle
+    50% 
+    {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+        transform-origin: 0 0;
+    }
+    // end
+    100% 
+    {
+        transform: scale(1);
+        box-shadow: none;
+        transform-origin: 0 0;
+        filter: none;
+    }
+}
+
+////////////////////////////////////////
+// PARAGRAPH
+// create a bottom margin except for the last paragraph
+.paragraph:not(:last-of-type)
+{
+    margin-bottom: 2rem;
+}
+
+////////////////////////////////////////
+// LIST
+.list
+{
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+
+    // display items inline with wrapping
+    display: flex;
+    flex-wrap: wrap;
+
+    // @1100px device width
+    @media only screen and (max-width: $bp-large) 
+    {           
+        padding: 2rem 0;
+        font-size: 1.6rem;
+        font-weight: 400;     
+    }
+
+    // @1000px device width
+    @media only screen and (max-width: $bp-medium-large) 
+    {           
+        font-size: 1.55rem;      
+    }
+
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {           
+        font-size: 1.5rem;
+        font-weight: 300;     
+    }
+
+    // @600px device width
+    @media only screen and (max-width: $bp-small) 
+    {           
+        padding-left: 1rem;
+        font-size: 1.75rem;
+    }
+
+    // @500px device width
+    @media only screen and (max-width: $bp-smaller) 
+    {           
+        padding-left: .5rem;
+        font-size: 1.5rem;
+    }
+    
+    // @400px device width
+    @media only screen and (max-width: $bp-smallest) 
+    {           
+        padding-left: 0;
+        font-size: 1.35rem;
+    }  
+
+    &__item
+    {
+        // set each item @ 50% width (no growth/no shrink)
+        flex: 0 0 50%; 
+        margin-bottom: .7rem;
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        { 
+            font-weight: 600;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            &:nth-of-type(odd)
+            {
+                flex: 0 0 55%;
+            }
+
+            &:nth-of-type(even)
+            {
+                flex: 0 0 45%;
+            }
+        }         
+    }
+
+    // add the chevrons
+    &__item::before
+    {
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            margin-right: 2px;
+        }  
+
+        // Older browsers
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
+
+        // Newer browsers - use masks
+        // Test with feature query
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) 
+        {
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+                mask-image: url(../img/chevron-thin-right.svg);
+                mask-size: cover;
+            background-image: none;
+        }
+    }
+}
+
+////////////////////////////////////////
+// RECOMMEND SECTION
+.recommend
+{
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+
+    // display items inline and centered
+    display: flex;
+    align-items: center;
+
+    &__count 
+    {
+        // margin right for all remaining available space in container
+        margin-right: auto;
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {
+            font-size: 1.75rem;              
+        }
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {
+            font-size: 1.5rem;
+            font-weight: 400;
+            padding: 0 2rem;    
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            font-size: 1.75rem;              
+        }
+
+        // 4600px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {
+            font-size: 1.5rem;              
+        }
+    }
+
+    &__friends 
+    {
+        // display items inline
+        display: flex;
+        margin-right: 1rem;
+    }
+
+    &__photo 
+    {
+        // allow border to increase size of box
+        box-sizing: content-box;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;     // circular
+        border: 2px solid var(--color-grey-light-4);
+
+        // overlap photos 
+        &:not(:last-child) 
+        {
+            margin-right: -1.75rem;
+        }
+
+        // on hover (scale up)
+        &:hover
+        {
+            transform: scale(1.25);
+            z-index: 1;
+        }
+    }
+
+    // for unhovered photos (scale down)
+    &:hover &__photo:not(:hover)
+    {
+        transform: scale(.9);
+    }
+}
+
+////////////////////////////////////////
+// REVIEW SECTION
+.review 
+{
+    background-color: #fff;
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-light);
+
+    // required for ::before styling
+    position: relative;
+    overflow: hidden;
+
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {
+        padding: 2rem;
+        margin-bottom: 3rem; 
+    } 
+
+    &__text
+    {
+        margin-bottom: 2rem;
+        // required for ::before styling
+        position: relative;
+        // make text top item
+        z-index: 10;
+    }
+
+    &__user
+    {
+        display: flex;
+        align-items: center;               
+    }
+    
+    &__photo
+    {
+        // allow img border to increase size of box
+        box-sizing: content-box;
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;     // circular
+        border: 3px solid var(--color-grey-light-4);
+        margin-right: 1.5rem;
+        
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {
+            height: 5.5rem;
+            width: 5.5rem;
+        } 
+    }
+
+    // hover (scale up)
+    &__photo:hover 
+    {
+        transform: scale(1.2);
+    }
+
+    &__user-box
+    {
+        margin-right: auto;
+    }
+
+    &__user-name
+    {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {
+            font-size: 1.5rem;           
+        } 
+    }
+
+    &__user-date
+    {
+        font-size: 1rem;
+        color: var(--color-grey-dark-3);
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {
+            font-size: 1.4rem;           
+        } 
+    }
+
+    &__rating
+    {
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: var(--color-primary);
+    }
+}
+
+// quotation marks at beginning of block-quote area
+.review::before
+{
+    content: "\201C";       // left quotes symbol
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    line-height: 1;
+    font-size: 20rem;
+    color: var(--color-grey-light-3);
+    font-family: sans-serif;
+    // quotes underneath text 
+    z-index: 1;
+    margin-left: -1px;
+}
+
+///////////////////////////////////////
+// CALL TO ACTION SECTION
+.cta 
+{
+    padding: 3.5rem 0;
+    // center items
+    text-align: center;
+
+    // @900px device width
+    @media only screen and (max-width: $bp-medium) 
+    {
+        padding: 2.5rem 0;
+    }
+
+    //header 
+    &__book-now 
+    {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            font-size: 1.75rem;
+            font-weight: 400;
+        }
+    }
+}
+
+// button
+.btn 
+{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));   
+    cursor: pointer;
+    // for hover effect
+    position: relative;
+    // hide any overflow of the button
+    overflow: hidden;
+
+    // all direct children of .btn (in this case 2 span elements)
+    & > * 
+    {
+        // display both spans as inline block
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        transition: all 1s;
+    }
+
+    // initial span settings
+    &__visible 
+    {
+        // add padding (defines the size of the button)
+        padding: 2rem 7.5rem;
+    }
+
+    &__invisible 
+    {
+        // position outside of button
+        position: absolute;
+        // remove side padding to accomodate text in span(invisible)
+        padding: 2rem 0;    
+        left: 0;
+        // position above button
+        top: -100%;         
+    }
+
+    &__popup
+    {
+        height: 4rem;
+        width: 15rem;
+        padding-top: 1rem;
+    }
+
+    // hover event
+    &:hover 
+    {
+        // reverse gradient on hover
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    // span (visible) 
+    &:hover &__visible 
+    {
+        // position span below button
+        transform: translateY(100%);    
+    }
+
+    // span(invisible) 
+    &:hover &__invisible 
+    {
+        // position span inside button
+        top: 0;     
+    }
+
+    // button clicked (animate)
+    &:focus 
+    {
+        outline: none;
+        // animation
+        animation: pulsate 1s infinite;
+    }
+}
+
+///////////////////////////////////////
+// POPUP SECTION
+// Header
+.popup-header
+{   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 98vw;
+    background-color: white;    
+    border-bottom: 1px solid black;
+    cursor: default;
+
+    // @600px device width
+    @media only screen and (max-width: $bp-small) 
+    {
+        flex-wrap: wrap;
+        padding-bottom: 1rem;
+    }
+   
+    &__heading
+    {
+        flex: 0 1 40%;
+        font-size: 2.25rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {           
+            flex: 0 1 36%;
+            font-size: 2.1rem;
+            padding: 1.5rem 1rem;
+        }  
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            flex: 0 1 43%;
+        }  
+        
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {           
+            flex: 0 1 47%;
+            font-size: 1.8rem;
+            padding: 1rem 1rem;           
+        }  
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            flex: 0 1 60%;
+            xpadding: 1rem 0 1rem 1rem;
+        }  
+    }
+
+    &__stars
+    { 
+        display: flex;
+
+        // @700px device width       
+        @media only screen and (max-width: $bp-medium-small) 
+        {                       
+            margin-left: -1.75rem;
+        }         
+                   
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            flex: 0 1 25%;                        
+            margin-left: -2rem;
+        } 
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {                      
+            flex: 0 1 15%;
+            margin-left: -1rem;  
+            margin-right: -3rem;
+        } 
+        
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {                      
+          margin-right: 8rem;
+        }      
+    }
+
+    &__icon-star
+    {
+        // set height, width & color of icons
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            height: 1.5rem;           
+            width: 1.5rem;
+        }
+    }
+
+    &__icon-location
+    {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--color-primary);       
+    }
+
+    &__location
+    {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        
+        // 1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {                      
+            font-size: 2rem;
+        }
+        
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {                      
+            flex: 1 0 auto;
+            margin-left: 1rem;
+        }   
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {                  
+            order: 4;
+            margin-top: -2rem;
+            margin-left: .5rem;          
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {                  
+            margin-top: -1.5rem; 
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {                  
+            flex: 1 0 51%;   
+            margin-top: -2.2rem;
+        }
+
+        .btn-inline
+        {
+            font-size: 1.75rem;
+            
+            // @400px device width
+            @media only screen and (max-width: $bp-smallest) 
+            { 
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &__icon-location
+    {
+        // add separation (right side) to icon
+        margin-right: .5rem;
+    }
+
+    &__rating
+    {
+        position: relative;   
+        display: flex;
+        flex-direction: column;       
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+                
+        color: #fff;
+        margin-left: 3rem;
+        padding: 0 1.5rem 0 2.25rem;
+        background-color: var(--color-primary);
+                    
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            align-self: auto;
+            margin-top: .75rem;
+            margin-right: 8rem;
+        }
+        
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            order: 4;
+            height: 3.5rem;           
+            width: 6rem;
+            padding-top: 0rem;
+            margin-top: -1.5rem;
+            margin-bottom: .75rem;
+            margin-right: 9.5rem;                        
+        }
+    }
+    // border cut-out
+    &__rating:after 
+    {
+        position: absolute;
+        content: "";       
+        left: 0;
+        border-left: 1rem solid white;
+        border-top: 3.5rem solid transparent;
+        border-bottom: 3.5rem solid transparent;
+        // cover left border
+        transform: translateX(-1px);
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            border-left: 1rem solid white;
+            border-top: 3rem solid transparent;
+            border-bottom: 3rem solid transparent;
+        }
+    }
+
+    &__rating-average
+    {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 1.25;
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {           
+            font-size: 2.5rem;
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {           
+            font-size: 2rem;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {          
+            padding-left: .5rem;
+        }
+    }
+
+    &__rating-count
+    {
+        font-size: .8rem;
+        text-transform: uppercase;
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {           
+            font-size: 1.2rem;
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            padding-bottom: .5rem;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            display: none;
+        }
+    }
+
+    &__close 
+    {       
+        height: 3.2rem;
+        width: 3rem;   
+        margin-left: 2rem;
+        margin-right: 2rem;                      
+        font-size: 3.5rem;
+        color: var(--color-grey-dark-1);
+        text-align: center;
+        line-height: .75;
+        background-color: var(--color-primary); 
+        border: 1px solid var(--color-grey-dark-3);
+        transition: all .2s;
+
+         // @600px device width
+         @media only screen and (max-width: $bp-small) 
+         {
+            position: absolute; 
+            top: 1rem;
+            right: .5rem;
+            margin-right: 2.5rem;  
+         }
+         
+         // @400px device width
+         @media only screen and (max-width: $bp-smallest) 
+         {               
+            height: 2.75rem;
+            width: 2.5rem; 
+            font-size: 3rem;             
+         }    
+
+        &:hover 
+        {
+            transform: scale(1.2) rotate(90deg);
+            font-weight: 600;
+        }
+    }
+
+    &__close a 
+    {
+        text-decoration: none;
+    }
+}
+
+// Popup Content 
+.popup-content
+{
+    display: flex;
+    flex-direction: column;
+    width: 98vw;    
+    height: 100%;
+    background-color: var(--color-grey-light-2);
+    position: relative;
+
+    &__gallery
+    {
+        display: flex;
+        height: 25%; 
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {          
+            height: 20%; 
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {          
+            height: 19%; 
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {           
+            height: 17%; 
+        }
+    }
+
+    &__photo
+    {
+        width: 25%;
+        border: 1px solid white;
+        object-fit: cover;
+              
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            width: 33.333%; 
+        }
+    }
+
+    &__photo:hover 
+    {       
+        outline: .4rem solid #e7e4e4;
+        box-shadow: 0 1rem 1.5rem rgba(#000, .2);
+        transform: scale(1.15);
+        z-index: 1;
+        transition: .5s;       
+    }
+
+    &__sidebar
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25%;
+        height: 70rem; 
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            
+
+            position: relative;           
+            flex: 1 0 23%;
+            flex-direction: row;
+            wrap: wrap;
+            order: 4;
+
+            height: 20vh;
+            margin-top: 2rem;
+            padding-top: 3rem;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {
+            width: 98vw;   
+        }
+    }
+
+    &__cta
+    {        
+        text-align: center;
+        height: 50vh;  
+        margin-top: -1rem;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 25px; 
+        background-color: var(--color-popup-light);   
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {          
+            height: 50%; 
+        }
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {          
+            height: 45%; 
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        { 
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;   
+            align-content: center;
+    
+            width: 98vw;
+            height: 15vh;   
+            margin-top: -3rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0; 
+
+            .top 
+            {
+                display: flex;
+                flex-direction: row;
+                flex: 1 0 100%;
+                justify-content: space-around;
+                align-items: center;
+                align-content: flex-start;
+
+                width: 98vw;
+                padding-top: 2rem;              
+            }
+
+            .bottom
+            {
+                margin-top: -1rem;
+            }
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        { 
+            .bottom
+            {
+                margin-top: -4rem;
+            }    
+        }
+
+        .btn:hover
+        {
+            transform: scale(1.15);
+        }
+    }
+
+    &__header
+    {
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+    
+        margin-top: 1rem;
+        font-size: 3rem;
+        font-weight: 600;
+        background-color: #99e6ff;
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        { 
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            align-self: flex-end;
+
+            height: 20vh;
+            background-color: transparent;
+        }
+
+        // @400px device width   /////////////////
+        @media only screen and (max-width: $bp-smallest) 
+        { 
+            width: 25vw;
+        }        
+    }
+
+    .logo
+    {
+        margin-right: 15%;
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {           
+            margin-right: 12%;
+        }
+
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {           
+            margin-right: 8%;
+        }
+    }
+
+    &__prices 
+    {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.0;
+        text-align: center; 
+        color: var(--color-grey-dark-1);
+        margin-top: 3.5rem;
+        margin-bottom: 2rem;
+
+         // @700px device width
+         @media only screen and (max-width: $bp-medium-small) 
+         {          
+            margin-top: 5rem; 
+            font-size: 1.6rem;
+         }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            margin-top: 0;
+            margin-right: -8rem;
+            line-height: 1.25;
+            height: 10vh;
+
+            p 
+            {
+                font-size: 1.8rem;
+            }
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {
+            margin-right: -3rem;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        { 
+            margin-right: -4rem;
+            
+            p
+            {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+    }
+    
+    &__services
+    {
+        height: 100vh;
+        background-color: var(--color-popup-light);
+        border-top: 1px solid black; 
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {
+            display: none;
+        }
+    }
+
+    &__services-header
+    {
+        display: flex;
+        justify-content: space-around;
+    
+        font-size: 2.5rem;
+        font-weight: 600;
+        background-color: #99e6ff; 
+        
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {           
+            font-size: 2.25rem;           
+        } 
+        
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {           
+            font-size: 2rem;
+            justify-content: center;
+            padding-right: 1rem;
+        }        
+    }
+
+    &__services-list
+    {
+        list-style: none; 
+        padding-top: 2rem;       
+    }
+
+    &__services-item
+    {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        color: var(--color-grey-dark-1);
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {           
+            font-size: 2rem;
+            line-height: 2;
+        }
+        
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {           
+            font-size: 1.7rem;
+            padding-right: 1rem;
+        }
+        
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {                       
+            display: flex;
+            justify-content: center;
+            font-size: 1.4rem;
+        }  
+    }
+    
+    &__detail
+    {
+        width: 75%;
+        font-size: 1.7rem;
+        padding: 2rem;
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {           
+            font-size: 2.2rem;
+        }
+
+        // @1000px device width
+        @media only screen and (max-width: $bp-medium-large) 
+        {           
+            font-size: 2rem;
+        }
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {           
+            font-size: 1.8rem; 
+        }
+
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {           
+            font-size: 1.7rem;
+        }
+
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {        
+            font-size: 1.4rem;
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            font-size: 1.3rem;    
+        }
+    }
+
+    &__list
+    {
+        display: flex;
+        flex-wrap: wrap;
+
+        list-style: none;
+        font-size: 1.6rem;
+        width: 60vw;
+        margin-left: 7%;
+        padding: 1rem 1rem 1rem 5%;
+        background-color: var(--color-popup-dark);
+        border: 1px solid var(--color-grey-dark-3);
+
+        // @1100px device width
+        @media only screen and (max-width: $bp-large) 
+        {           
+            font-size: 2rem;
+        }
+
+        // @900px device width
+        @media only screen and (max-width: $bp-medium) 
+        {           
+            font-size: 1.8rem;
+        }
+        
+        // @600px device width
+        @media only screen and (max-width: $bp-small) 
+        {           
+            font-weight: 600;
+            width: 80vw;
+            margin-left: 10%;
+            font-size: 1.5rem;
+        }
+
+        // @500px device width
+        @media only screen and (max-width: $bp-smaller) 
+        {           
+            margin-left: 9%;
+        }
+       
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            font-size: 1.35rem;
+            margin-left: 4%;
+            width: 90vw;
+        }
+    }  
+
+    &__list-item
+    {
+        width: 60%;
+        margin-bottom: .7rem;
+                         
+        &:nth-of-type(odd)
+        {
+            flex: 0 0 60%;
+        }
+
+        &:nth-of-type(even)
+        {
+            flex: 0 0 30%;
+        }
+        
+        // @1000px device width
+        @media only screen and (max-width: $bp-medium-large) 
+        {           
+            &:nth-of-type(odd)
+            {
+                flex: 0 0 60%;                
+            }
+
+            &:nth-of-type(even)
+            {
+                flex: 0 0 40%;
+            }
+        } 
+        
+        // @700px device width
+        @media only screen and (max-width: $bp-medium-small) 
+        {           
+            &:nth-of-type(odd)
+            {
+                flex: 0 0 55%;
+            }
+
+            &:nth-of-type(even)
+            {
+                flex: 0 0 45%;
+            }
+        }
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        { 
+            margin-top: -.5rem;   
+        }
+    }
+
+    // add the chevrons
+    &__list-item::before
+    {
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+
+        // @400px device width
+        @media only screen and (max-width: $bp-smallest) 
+        {           
+            margin-right: 2px;
+        }  
+
+        // Older browsers
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
+
+        // Newer browsers - use masks
+        // Test with feature query
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) 
+        {
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+                mask-image: url(../img/chevron-thin-right.svg);
+                mask-size: cover;
+            background-image: none;
+        }       
+    }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+

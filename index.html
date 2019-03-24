@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">        
+        <title>Trillo &mdash; Your all-in-one travel booking app</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- header -->
+            <div class="header">
+                <!-- logo -->
+                <img src="img/logo.png" alt="trillo logo" class="logo">
+                <!-- hotel search form -->
+                <form action="#" class="search">
+                    <!-- search input box -->
+                    <input type="text" class="search__input" placeholder="Search hotels">
+                    <!-- search button -->
+                    <button class="search__button">
+                        <!-- magnifying glass svg -->  
+                        <svg class="search__icon">
+                            <use                                                                    xlink:href="img/sprite.svg#icon-magnifying-glass"                    href="img/sprite.svg#icon-magnifying-glass">
+                            </use>                            
+                        </svg>
+                    </button>
+                    <!-- search suggestions drop-down -->
+                    <ul class="suggestions">
+                        <li class="suggestions__item">
+                            <a href="#popup1" class="suggestions__link">
+                                <img src="img/hotels/Vistabella0.jpg" alt="Hotel Vistabella" class="suggestions__photo">
+                                <span class="suggestions__name">
+                                    Hotel Vistabella
+                                </span>                               
+                                <span class="suggestions__location">
+                                    Girona, Spain
+                                </span>
+                            </a>
+                        </li>                       
+                        <li class="suggestions__item">
+                            <a href="#popup2" class="suggestions__link">
+                                <img src="img/hotels/lareserve0.jpg" alt="La Reserve" class="suggestions__photo">
+                                <span class="suggestions__name">
+                                    La R&eacute;serve Ramatuelle
+                                </span>
+                                <span class="suggestions__location">
+                                    Ramatuelle, France
+                                </span>
+                            </a>
+                        </li>                      
+                        <li class="suggestions__item">
+                            <a href="#popup3" class="suggestions__link">
+                                <img src="img/hotels/aman0.jpg" alt="Aman Venice" class="suggestions__photo">
+                                <span class="suggestions__name">
+                                    Aman Venice
+                                </span>                                
+                                <span class="suggestions__location">
+                                    Venezia, Italy
+                                </span>
+                            </a>
+                        </li>
+                        <li class="suggestions__item">
+                            <a href="#popup4" class="suggestions__link">
+                                <img src="img/hotels/Mykonos0.jpg" alt="Mykonos Grand Hotel" class="suggestions__photo">  
+                                <span class="suggestions__name">
+                                    Mykonos Grand Hotel
+                                </span>
+                                <span class="suggestions__location">
+                                    Mykonos, Greece
+                                </span>
+                            </a>
+                        </li>                       
+                        <li class="suggestions__item">
+                            <a href="#popup5" class="suggestions__link">
+                                <img src="img/hotels/LaPosch0.jpg" alt="LaPosch Chalet"                   class="suggestions__photo">
+                                <span class="suggestions__name">
+                                    LaPosch Chalet
+                                </span>                                
+                                <span class="suggestions__location">
+                                    Biberweir, Austria
+                                </span>
+                            </a>
+                        </li>
+                        <li class="suggestions__item">
+                            <a href="#popup6" class="suggestions__link">
+                                <img src="img/hotels/Monart0.jpg" alt="Monart Spa"                    class="suggestions__photo">
+                                <span class="suggestions__name">
+                                    Monart Spa
+                                </span>                              
+                                <span class="suggestions__location">
+                                    Wexford, Ireland
+                                </span>
+                            </a>
+                        </li>
+                        <li class="suggestions__item">
+                            <a href="#popup7" class="suggestions__link">
+                                <img src="img/hotels/Falsled0.jpg" alt="Falsled Kro" class="suggestions__photo"> 
+                                <span class="suggestions__name">
+                                    Falsled Kro
+                                </span>                                
+                                <span class="suggestions__location">
+                                    Millinge, Denmark
+                                </span>
+                            </a>
+                        </li>
+                        <li class="suggestions__item">
+                            <a href="#popup8" class="suggestions__link">
+                                <img src="img/hotels/Dromoland0.jpg" alt="Dromoland Castle" class="suggestions__photo">
+                                <span class="suggestions__name">
+                                    Dromoland Castle 
+                                </span>                               
+                                <span class="suggestions__location">
+                                    Newmarket, Ireland
+                                </span>
+                            </a>
+                        </li>
+                        <li class="suggestions__item">
+                            <a href="#popup9" class="suggestions__link">
+                                <img src="img/hotels/Conrad0.jpg" alt="Conrad Algarve" class="suggestions__photo">
+                                <span class="suggestions__name">
+                                    Conrad Algarve
+                                </span>                               
+                                <span class="suggestions__location">
+                                    Almancil, Portugal
+                                </span>
+                            </a>
+                        </li>
+                        <li class="suggestions__item">
+                            <a href="#popup10" class="suggestions__link">
+                                <img src="img/hotels/Solstrand0.jpg" alt="Solstrand Hotel" class="suggestions__photo">
+                                <span class="suggestions__name">
+                                    Solstrand Hotel
+                                </span>                                
+                                <span class="suggestions__location">
+                                    Bergen, Norway
+                                </span>
+                            </a>
+                        </li>
+                        <li class="suggestions__item">
+                            <a href="#popup11" class="suggestions__link">
+                                <img src="img/hotels/4seasons0.jpg" alt="Four Seasons Hotel" class="suggestions__photo"> 
+                                <span class="suggestions__name">
+                                    Four Seasons Hotel
+                                </span>                                
+                                <span class="suggestions__location">
+                                    Desroches, Seychelles
+                                </span>
+                            </a>
+                        </li>                      
+                    </ul>
+                    <!-- close/reset button -->
+                    <button type="reset" value="reset" class="search__btn-close">Close</button>
+                </form>
+                <!-- user navigation area -->
+                <nav class="user-nav">
+                    <!-- bookmark box -->
+                    <div class="user-nav__icon-box">
+                        <!-- bookmark svg -->
+                        <svg class="user-nav__icon">                                                       
+                            <use
+                                xlink:href="img/sprite.svg#icon-bookmark" href="img/sprite.svg#icon-bookmark">
+                            </use>                           
+                        </svg>
+                        <span class="user-nav__notification">7</span>
+                    </div>
+                    <!-- chat box -->
+                    <div class="user-nav__icon-box">
+                        <!-- chat svg -->
+                        <svg class="user-nav__icon">                            
+                            <use 
+                                xlink:href="img/sprite.svg#icon-chat" 
+                                href="img/sprite.svg#icon-chat">
+                            </use>
+                        </svg>
+                        <span class="user-nav__notification">13</span>
+                        <!-- chat messages drop-down list -->
+                        <div class="chat-messages">
+                            <ul class="chat-messages__list">
+                                <li class="chat-messages__item">
+                                    <img src="img/user-6.jpg" alt="user_photo" class="chat-messages__photo">
+                                    <div class="chat-messages__content">
+                                        <a href="#" class="chat-messages__user-name">Rosa Budd</a>
+                                        <p class="chat-messages__text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                                        </p>
+                                    </div>
+                                </li>                               
+                                <li class="chat-messages__item">
+                                    <img src="img/user-3.jpg" alt="user_photo" class="chat-messages__photo">
+                                    <div class="chat-messages__content">
+                                        <a href="#" class="chat-messages__user-name">Brock Ali</a>
+                                        <p class="chat-messages__text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="chat-messages__item">
+                                    <img src="img/user-4.jpg" alt="user_photo" class="chat-messages__photo">
+                                    <div class="chat-messages__content">
+                                        <a href="#" class="chat-messages__user-name">Saul Amander</a>
+                                        <p class="chat-messages__text"> 
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi. 
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="chat-messages__item">
+                                    <img src="img/user-5.jpg" alt="user_photo" class="chat-messages__photo">
+                                    <div class="chat-messages__content">
+                                        <a href="#" class="chat-messages__user-name">Avery Goodfellow</a>
+                                        <p class="chat-messages__text"> 
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi. 
+                                        </p>
+                                    </div>
+                                </li>                               
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- user box -->
+                    <div class="user-nav__user">
+                        <!-- user image -->
+                        <img src="img/douglas.jpg" alt="User Photo" class="user-nav__user-photo">
+                        <span class="user-nav__user-name user">Doug</span>
+                        <!-- user drop-down list -->                            
+                        <ul class="user__list">                           
+                            <li class="user__item">
+                                <a href="#" class="user__link">Profile
+                                    <img src="img/profile.svg" alt="user-profile" class="user__icon">  
+                                </a>
+                            </li>                                                                
+                            <li class="user__item">
+                                <a href="#" class="user__link">Facebook
+                                    <img src="img/facebook.svg" alt="facebook-logo" class="user__icon">
+                                </a>
+                            </li>                           
+                            <li class="user__item">
+                                <a href="#" class="user__link">YouTube
+                                    <img src="img/youtube.svg" alt="youtube-logo" class="user__icon"> 
+                                </a>
+                            </li>
+                            <li class="user__item">
+                                <a href="#" class="user__link">LinkedIn
+                                    <img src="img/linkedin.svg" alt="linkedin-logo" class="user__icon">   
+                                </a>
+                            </li>                       
+                        </ul>                    
+                    </div>
+                </nav>
+            </div>
+            <!-- Content -->
+            <div class="content">
+                <!-- nav sidebar -->
+                <nav class="sidebar">
+                    <!-- sidebar navigation list -->
+                    <ul class="side-nav">
+                        <!-- Home -->
+                        <li class="side-nav__item ">
+                            <a href="" class="side-nav__link">
+                                <!-- home svg -->
+                                <svg class="side-nav__icon">
+                                    <use 
+                                        xlink:href="img/sprite.svg#icon-home" 
+                                        href="img/sprite.svg#icon-home">
+                                    </use>
+                                </svg> 
+                                <span>Hotel</span>                              
+                            </a>                            
+                        </li>
+                        <!-- Flights -->
+                        <li class="side-nav__item">
+                            <a href="" class="side-nav__link">
+                                <!-- aircraft svg -->
+                                <svg class="side-nav__icon">
+                                    <use 
+                                        xlink:href="img/sprite.svg#icon-aircraft-take-off" 
+                                        href="img/sprite.svg#icon-aircraft-take-off">
+                                    </use>
+                                </svg>
+                                <span>Flights</span>                               
+                            </a>                            
+                        </li>
+                        <!-- Car Rental -->
+                        <li class="side-nav__item">
+                            <a href="" class="side-nav__link">
+                                <!-- key svg -->
+                                <svg class="side-nav__icon">
+                                    <use 
+                                        xlink:href="img/sprite.svg#icon-key" 
+                                        href="img/sprite.svg#icon-key">
+                                    </use>
+                                </svg>
+                                <span>Car Rental</span>                              
+                            </a>                           
+                        </li>
+                        <!-- Tours -->
+                        <li class="side-nav__item">
+                            <a href="" class="side-nav__link">
+                                <!-- map svg -->
+                                <svg class="side-nav__icon">
+                                    <use 
+                                        xlink:href="img/sprite.svg#icon-map" 
+                                        href="img/sprite.svg#icon-map">
+                                    </use>
+                                </svg>
+                                <span>Tours</span>
+                            </a>                            
+                        </li>
+                    </ul>
+                    <!-- Legal -->
+                    <div class="legal">
+                        &copy 2018 by Trillo LLC<br>All rights reserved.
+                    </div>                   
+                </nav>
+                <!-- Hotel-View -->
+                <main class="hotel-view">
+                    <!-- Hotel Picture Gallery-->
+                    <div class="gallery">
+                        <!-- 
+                            <figure> wrappers for images: allows the use of <figcaption> if desired
+                            and provides self-contained units of content for easier sizing and positioning of the images within the gallery flex container
+                         -->
+                         <!-- hotel 1 --> 
+                        <figure class="gallery__item">                          
+                            <!-- optimize image -->                          
+                            <img srcset="img/hotel-1-small.jpg 350w, img/hotel-1.jpg 1500w"
+                            sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	            alt="Picture of hotel 1" class="gallery__photo" 
+                            src="img/hotel-1.jpg">
+                            <!-- caption -->
+                            <figcaption class="gallery__caption">
+                                <span>Sunset Promenade</span>
+                            </figcaption>
+                        </figure>
+                        <!-- hotel 2 -->
+                        <figure class="gallery__item">                           
+                            <!-- optimize image --> 
+                            <img srcset="img/hotel-2-small.jpg 350w, img/hotel-2.jpg 1500w"
+                            sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	            alt="Picture of hotel 1" class="gallery__photo" 
+                            src="img/hotel-1.jpg">
+                            <!-- caption -->
+                            <figcaption class="gallery__caption">
+                                <span>Poolside Repose</span>
+                            </figcaption>
+                        </figure>
+                        <!-- hotel 3 -->
+                        <figure class="gallery__item">
+                            <!-- gradient overlay -->
+                            <div class="gallery__photo-overlay"></div>                            
+                            <!-- optimize image --> 
+                            <img srcset="img/hotel-3-small.jpg 350w, img/hotel-3.jpg 1500w"
+                            sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	            alt="Picture of hotel 1" class="gallery__photo" 
+                            src="img/hotel-1.jpg">
+                            <!-- caption -->
+                            <figcaption class="gallery__caption">
+                                <span>Rampart Vistas</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <!-- Hotel Overview -->
+                    <div class="overview">
+                        <!-- heading -->
+                        <h1 class="overview__heading">
+                            Hotel Las Palmas
+                        </h1>
+                        <!-- stars -->
+                        <div class="overview__stars">
+                            <!-- star svg -->
+                            <svg class="overview__icon-star">
+                                <use 
+                                    xlink:href="img/sprite.svg#icon-star" 
+                                    href="img/sprite.svg#icon-star">
+                                </use>
+                            </svg>
+                            <!-- star svg -->
+                            <svg class="overview__icon-star">
+                                <use 
+                                    xlink:href="img/sprite.svg#icon-star" 
+                                    href="img/sprite.svg#icon-star">
+                                </use>
+                            </svg>
+                            <!-- star svg -->
+                            <svg class="overview__icon-star">
+                                <use 
+                                    xlink:href="img/sprite.svg#icon-star" 
+                                    href="img/sprite.svg#icon-star">
+                                </use>
+                            </svg>
+                            <!-- star svg -->
+                            <svg class="overview__icon-star">
+                                <use 
+                                    xlink:href="img/sprite.svg#icon-star" 
+                                    href="img/sprite.svg#icon-star">
+                                </use>
+                            </svg>
+                            <!-- star svg -->
+                            <svg class="overview__icon-star">
+                                <use 
+                                    xlink:href="img/sprite.svg#icon-star" 
+                                    href="img/sprite.svg#icon-star">
+                                </use>
+                            </svg>
+                        </div>
+                        <!-- location -->
+                        <div class="overview__location">
+                            <!-- location-pin svg -->
+                            <svg class="overview__icon-location">
+                                <use 
+                                    xlink:href="img/sprite.svg#icon-location-pin"
+                                    href="img/sprite.svg#icon-location-pin">
+                                </use>
+                            </svg>
+                            <!-- button -->
+                            <button class="btn-inline">Albufeira, Portugal</button>
+                        </div>
+                        <!-- rating -->
+                        <div class="overview__rating">
+                            <div class="overview__rating-average">8.6</div>
+                            <div class="overview__rating-count">429 votes</div>
+                        </div>
+                    </div>
+                    <!-- Hotel Detail Section -->
+                    <div class="detail">
+                        <!-- Description column -->
+                        <div class="description">
+                            <p class="paragraph">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur natus minima suscipit autem voluptatem esse ab, quam cupiditate recusandae veritatis vitae ipsa, quidem delectus!
+                            </p>
+                            <p class="paragraph">
+                                Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate delectus, inventore iure aliquid aliquam.
+                            </p>
+                            <!-- Description list-->
+                            <ul class="list">
+                                <!-- description list-items -->
+                                <li class="list__item">Close to beaches</li>
+                                <li class="list__item">Free airport shuttle</li>
+                                <li class="list__item">Air-conditioning and heating</li>
+                                <li class="list__item">We speak all languages</li>
+                                <li class="list__item">Breakfast included</li>
+                                <li class="list__item">Free WIFI in all rooms</li>
+                                <li class="list__item">Pets allowed</li>
+                                <li class="list__item">Perfect for families</li>
+                            </ul>
+                            <!-- Recommendation section -->
+                            <div class="recommend">
+                                <!-- paragraph -->
+                                <p class="recommend__count">
+                                    Rosa and 3 other friends recommend this hotel!
+                                </p>
+                                <!-- friends section -->                            
+                                <div class="recommend__friends">
+                                    <!-- friend images -->
+                                    <img src="img/user-3.jpg" alt="Friend 1" class="recommend__photo">
+                                    <img src="img/user-4.jpg" alt="Friend 2" class="recommend__photo">
+                                    <img src="img/user-5.jpg" alt="Friend 3" class="recommend__photo">
+                                    <img src="img/user-6.jpg" alt="Friend 4" class="recommend__photo">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- User Reviews column-->
+                        <div class="user-reviews">
+                            <!-- Review 1 -->
+                            <figure class="review">
+                                <!-- User quote -->
+                                <blockquote class="review__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.   
+                                </blockquote>
+                                <!-- User detail -->
+                                <figcaption class="review__user">
+                                    <!-- Photo -->
+                                    <img src="img/user-1.jpg" alt="User 1" class="review__photo">
+                                    <!-- Name & date -->
+                                    <div class="review__user-box">
+                                        <p class="review__user-name">Nick Smith </p>
+                                        <p class="review__user-date">Feb 23rd, 2018</p>
+                                    </div>
+                                    <!-- Rating -->
+                                    <div class="review__rating">8.2</div>
+                                </figcaption>
+                            </figure>
+                            <!-- Review 2 -->
+                            <figure class="review">
+                                <!-- User quote -->
+                                <blockquote class="review__text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint perspiciatis, quos, mollitia natus dolorem consequatur aliquid excepturi dolore eveniet necessitatibus ex rem tempore dolor.
+                                </blockquote>
+                                <!-- User detail -->
+                                <figcaption class="review__user">
+                                    <!-- Photo -->
+                                    <img src="img/user-2.jpg" alt="User 2" class="review__photo">
+                                    <!-- Name & date -->
+                                    <div class="review__user-box">
+                                        <p class="review__user-name">Mary Thomas</p>
+                                        <p class="review__user-date">Sept 13th, 2018</p>
+                                    </div>
+                                    <!-- Rating -->
+                                    <div class="review__rating">9.3</div>
+                                </figcaption>
+                            </figure>
+                            <!-- Button -->
+                            <button class="btn-inline">
+                                Show all 
+                                <span>&rarr;</span>
+                            </button>
+                        </div>                        
+                    </div>
+                    <!-- CTA Section-->
+                    <div class="cta">
+                        <!-- heading-->
+                        <h2 class="cta__book-now">
+                            Good news! We have 4 rooms available for your selected dates!
+                        </h2>
+                        <!-- button -->
+                        <button class="btn">
+                            <span class="btn__visible">Book now</span>
+                            <span class="btn__invisible">Only 4 rooms left</span>
+                        </button>
+                    </div>
+                </main>
+            </div>
+            <!-- Popup Section -->
+            <!-- Hotel Vistabella -->
+            <div id="popup1" class="popup"> 
+                <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Hotel Vistabella
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Girona, Spain</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.1</div>
+                        <div class="popup-header__rating-count">516 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery images -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/Vistabella1-small.jpg 350w, img/hotels/Vistabella1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	alt="Hotel Vistabella" class="popup-content__photo" 
+                        src="img/hotels/Vistabella1.jpg">
+
+                        <img srcset="img/hotels/Vistabella2-small.jpg 350w, img/hotels/Vistabella2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	alt="Hotel Vistabella" class="popup-content__photo" 
+                        src="img/hotels/Vistabella2.jpg">
+
+                        <img srcset="img/hotels/Vistabella3-small.jpg 350w, img/hotels/Vistabella3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	alt="Hotel Vistabella" class="popup-content__photo" 
+                        src="img/hotels/Vistabella3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <!-- call to action -->
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <!-- header -->
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <!-- price -->
+                                <div class="popup-content__prices">
+                                    <p>Our special rates</p>
+                                    <p>start as low as</p>
+                                    <p>$109/night</p>                             
+                                </div>
+                            </div>
+                            <!-- button -->
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div> 
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li>   
+                            </ul>                                  
+                        </div>                       
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Hotel Vistabella is a romantic luxury hotel pearched on a small cliff overlooking two beaches in Roses on the Costa Brava of Catalonia. This peaceful location with spectacular vistas of surrounding mountains, Bay of Roses, and Mediterranean Sea offers the finest views and sunsets in all of Spain. It features rooms with balconies, a spa and 4 restaurants, including the Michelin-starred Els Brancs, and is but a short drive from the Dali Museum in Figueres, the house of Dali in Cadaques and the restaurant el Bulli in Cala Montjoi.
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Wellness center/spa </li>
+                        <li class="popup-content__list-item">Sauna/Steam room</li>
+                        <li class="popup-content__list-item">Turkish bath/massage</li>              
+                        <li class="popup-content__list-item">Solarium terrace</li>
+                        <li class="popup-content__list-item">Indoor swimming pool</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>                       
+                        <li class="popup-content__list-item">Boating pier</li>                          
+                        <li class="popup-content__list-item">Pets allowed</li>
+                    </ul>                                                                       
+                </div>              
+            </div>
+            <!-- La Reserve Hotel -->
+            <div id="popup2" class="popup"> 
+                    <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        La R&eacute;serve 
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Ramatuelle, France</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.6</div>
+                        <div class="popup-header__rating-count">376 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/lareserve1-small.jpg 350w, img/hotels/lareserve1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	alt="La Reserve" class="popup-content__photo" 
+                        src="img/hotels/lareserve1.jpg">
+
+                        <img srcset="img/hotels/lareserve2-small.jpg 350w, img/hotels/lareserve2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	alt="La Reserve" class="popup-content__photo" 
+                        src="img/hotels/lareserve2.jpg">
+
+                        <img srcset="img/hotels/lareserve3-small.jpg 350w, img/hotels/lareserve3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw"	alt="La Reserve" class="popup-content__photo" 
+                        src="img/hotels/lareserve3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$523/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>       <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                        
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Just a few minutes from the legendary village of Saint-Tropez and overlooking the Mediterranean, La Reserve Ramatuelle Hotel, Spa & Villas is tucked into the Côte d’Azur’s private La Réserve neighborhood. Enchanting views of the Mediterranean can be enjoyed from the terrace of any of the 9 guestrooms, 19 suites or 14 luxury private villas. The sumptuous spa offers 11 treatment rooms and focuses on personalized treatments and fitness programs that will help you age better and regenerate. A chic restaurant and bar features a sea-facing terrace.                            
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa </li>
+                        <li class="popup-content__list-item">Breakfast included</li>
+                        <li class="popup-content__list-item">Shuttle to beaches</li>              
+                        <li class="popup-content__list-item">In-room dining</li>
+                        <li class="popup-content__list-item">Two swimming pools</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>                       
+                        <li class="popup-content__list-item">Guided walking tours</li>                  
+                        <li class="popup-content__list-item">Baby-sitting service</li>
+                    </ul>                                                                          
+                </div>              
+            </div>
+            <!-- Aman Venice -->
+            <div id="popup3" class="popup"> 
+                <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Aman Venice 
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Venice, Italy</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.5</div>
+                        <div class="popup-header__rating-count">121 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/aman1-small.jpg 350w, img/hotels/aman1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/aman1.jpg">
+
+                        <img srcset="img/hotels/aman2-small.jpg 350w, img/hotels/aman2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/aman2.jpg">
+
+                        <img srcset="img/hotels/aman3-small.jpg 350w, img/hotels/aman3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/aman3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$987/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Located on the Grand Canal, Aman Venice guests can arrive by boat entering the formal 'porta d’acqua’ into a vast, beamed reception with marble flooring and original frescos. A trompe-l’oeil grand staircase leads to the piano nobile and rococo ballroom with gilt mirrors, frescos, Murano chandeliers, terrazzo floor and windows overlooking the Canal. Dining room, bar and salons have sumptuous Rubelli silk wall coverings, oil paintings and carved stone fireplaces with bowls of exotic white amaryllis as table centerpieces. Overlooking pantiled rooftops, the wooden 'altana’ is a decked terrace for enjoying sunset cocktails.                       
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa </li>
+                        <li class="popup-content__list-item">Breakfast included</li>
+                        <li class="popup-content__list-item">Airport shuttle</li>              
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurant/bar</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>
+                        <li class="popup-content__list-item">Gondola tours</li>
+                        <li class="popup-content__list-item">Currency exchange</li> 
+                    </ul>                                                                  
+                </div>              
+            </div>
+            <!-- Mykonos Grand Hotel -->
+            <div id="popup4" class="popup">
+                <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Mykonos Grand 
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Mykonos, Greece</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.6</div>
+                        <div class="popup-header__rating-count">243 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/Mykonos1-small.jpg 350w, img/hotels/Mykonos1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Mykonos1.jpg">
+
+                        <img srcset="img/hotels/Mykonos2-small.jpg 350w, img/hotels/Mykonos2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Mykonos2.jpg">
+
+                        <img srcset="img/hotels/Mykonos3-small.jpg 350w, img/hotels/Mykonos3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Mykonos3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$187/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Located right on Agios Ioannis Beach, Mykonos Grand Hotel & Resort is a 5-star boutique hotel set amidst cobbled paths overlooking Delos Island with a superb beachfront location. It offers a health center and fine dining in stylish settings. Mykonos Town is just 2.5 miles away. Feel the warm sand between your toes on a walk along the sandy beach or take a boat trip to the temple island of Delos and enjoy amazing views from the island’s highest point. Suites have private swimming pools, two bedrooms, and telescopes for star gazing. The Dolphins of Delos Restaurant offers a dramatic open air dining experience with stunning views.                        
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa</li>
+                        <li class="popup-content__list-item">Tennis court</li>
+                        <li class="popup-content__list-item">Swimming pool</li>              
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurants/bars</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>
+                        <li class="popup-content__list-item">Delos Island tours</li>
+                        <li class="popup-content__list-item">Airport shuttle</li> 
+                    </ul>                                                                  
+                </div>                
+            </div>
+            <!-- LaPosch Chalet -->  
+            <div id="popup5" class="popup">
+                    <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        LaPosch Chalet
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Biberwier, Austria</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.0</div>
+                        <div class="popup-header__rating-count">160 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/LaPosch1-small.jpg 350w, img/hotels/LaPosch1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/LaPosch1.jpg">
+
+                        <img srcset="img/hotels/LaPosch2-small.jpg 350w, img/hotels/LaPosch2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/LaPosch2.jpg">
+
+                        <img srcset="img/hotels/LaPosch3-small.jpg 350w, img/hotels/LaPosch3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/LaPosch3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$159/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Discover the Luxury Chalet Resort LaPosch in the heart of the Zugspitz Arena! Our exclusive alpine huts are perfectly nestled amidst the basin Biberwier and offer fantastic views of the Tyrolean mountains. The resort features superbly appointed chalets and a wide range of sports and wellness activities in the beautiful province of Tyrol, year round. You will find relaxation and recreation in a peaceful and unique atmosphere, harmonious in every last detail, for a perfect break from everyday routine. Welcome to mountain life!                    
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa </li>
+                        <li class="popup-content__list-item">Outdoor hot tub</li>
+                        <li class="popup-content__list-item">Swimming pool</li>              
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurant/bar</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>
+                        <li class="popup-content__list-item">Skiing lessons</li>
+                        <li class="popup-content__list-item">Fireplace</li> 
+                    </ul>                                                                  
+                </div>                
+            </div>
+             <!-- Monart Spa -->
+             <div id="popup6" class="popup">
+                    <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Monart Spa
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Wexford, Ireland</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.1</div>
+                        <div class="popup-header__rating-count">934 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/LaPosch1-small.jpg 350w, img/hotels/LaPosch1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/LaPosch1.jpg">
+
+                        <img srcset="img/hotels/LaPosch2-small.jpg 350w, img/hotels/LaPosch2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/LaPosch2.jpg">
+
+                        <img srcset="img/hotels/LaPosch3-small.jpg 350w, img/hotels/LaPosch3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/LaPosch3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$262/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Monart is located outside of Wexford near Enniscorthy in over 100 acres of lush Irish countryside. Nature is central to the ethos at Monart and Mount Leinster provides a stunning backdrop, where horses roam the surrounding fields and where acres of woodland and miles of sandy beaches wait 
+                            for you to explore. Monart is regarded by many as one of the world's leading destination spas. You are invited to experience these luxurious accommodations combined with world-class spa facilities and sumptuous food prepared by the finest chefs in a Michelin star rated restaurant.                    
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa</li>
+                        <li class="popup-content__list-item">Buffet breakfast</li>
+                        <li class="popup-content__list-item">Heated pools</li>              
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurant/bar</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>
+                        <li class="popup-content__list-item">Massage</li>
+                        <li class="popup-content__list-item">Multilingual staff</li> 
+                    </ul>                                                                  
+                </div>                
+            </div>
+            <!-- Falsled Kro -->  
+            <div id="popup7" class="popup">
+                    <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Falsled Kro
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Millinge, Denmark</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.1</div>
+                        <div class="popup-header__rating-count">314 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/Falsted1-small.jpg 350w, img/hotels/Falsted1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Falsted1.jpg">
+
+                        <img srcset="img/hotels/Falsted2-small.jpg 350w, img/hotels/Falsted2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Falsted2.jpg">
+
+                        <img srcset="img/hotels/Falsted3-small.jpg 350w, img/hotels/Falsted3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Falsted3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$389/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Standing in a lush garden overlooking Helnaes Sound, Falsled Kro is a luxury boutique hotel with a history stretching back to the sixteenth century. World famous for its gourmet restaurant, the hotel also offers exclusive accommodations in a magnificent waterside setting. Suites feature a furnished terrace, a tiled bathroom and a separate living room with a fireplace and a flat-screen TV. On the island of Fyn, birthplace of Hans Christian Andersen, guests can enjoy a variety of outdoor activities from the hotel. The port of Faaborg, with its famous old town, harbour, and ferry is less than 10 kilometres away.                    
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Horse riding</li>
+                        <li class="popup-content__list-item">Tennis</li>
+                        <li class="popup-content__list-item">Biking</li>
+                        <li class="popup-content__list-item">Golf</li>
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurant/bar</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>                        
+                        <li class="popup-content__list-item">Pets allowed</li> 
+                    </ul>                                                                  
+                </div>                
+            </div>
+            
+            <!-- Dromoland Castle -->  
+            <div id="popup8" class="popup">
+                    <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Dromoland Castle 
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Newmarket, Ireland</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.0</div>
+                        <div class="popup-header__rating-count">943 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/Dromoland1-small.jpg 350w, img/hotels/Dromoland1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Dromoland1.jpg">
+
+                        <img srcset="img/hotels/Dromoland2-small.jpg 350w, img/hotels/Dromoland2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Dromoland2.jpg">
+
+                        <img srcset="img/hotels/Dromoland3-small.jpg 350w, img/hotels/Dromoland3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Dromoland3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$268/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Dromoland Castle is a luxury hotel that rises out of the Emerald Isle’s lush greenery, like a picturesque storybook. Once the ancestral home of the Dromoland O’Briens, descendants of Irish kings, the hotel offers 97 sumptuous suites and staterooms. Experience the Earl of Thomond restaurant for expertly plated gourmet Irish delicacies and relax in the gently bubbling waters of the on-site spa. Cosmopolitan elegance meets countryside charm at this exquisite castle escape, which boasts centuries-old treasures, such as mysterious corridors and lavishly decorated common areas.              
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa</li>
+                        <li class="popup-content__list-item">Tennis</li>
+                        <li class="popup-content__list-item">Swimming pools</li>
+                        <li class="popup-content__list-item">Golf</li>
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurant/bar</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>                        
+                        <li class="popup-content__list-item">Babysitting</li> 
+                    </ul>                                                                  
+                </div>                
+            </div>
+            <!-- Conrad Algarve -->  
+            <div id="popup9" class="popup">
+                    <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Conrad Algarve
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Almancil, Portugal</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.3</div>
+                        <div class="popup-header__rating-count">814 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/Conrad1-small.jpg 350w, img/hotels/Conrad1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Conrad1.jpg">
+
+                        <img srcset="img/hotels/Conrad2-small.jpg 350w, img/hotels/Conrad2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Conrad2.jpg">
+
+                        <img srcset="img/hotels/Conrad3-small.jpg 350w, img/hotels/Conrad3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Conrad3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$295/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            The Conrad Algarve boasts the sleekest spa in the south of Portugal. Modelled on an 18th-century Portuguese palace, with Moorish themes and striking interior design, there is a choice of pools, excellent service, 154 stylish rooms, a Michelin-starred restaurant and a variety of award-winning 
+                            golf courses nearby. Artworks decorate the hotel with an emphasis on light, fire and water. The building is filled with light which reflects off the gleaming marble. An impressive full-service spa guarantees you will leave looking younger, brighter and lighter.          
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa</li>
+                        <li class="popup-content__list-item">Tennis</li>
+                        <li class="popup-content__list-item">Swimming pools</li>
+                        <li class="popup-content__list-item">Hot tub</li>
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurants/bars</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>                        
+                        <li class="popup-content__list-item">Beach shuttles</li>                         
+                    </ul>                                                                  
+                </div>                
+            </div>
+            <!-- Solstrand Hotel -->  
+            <div id="popup10" class="popup">
+                    <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Solstrand Hotel 
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Bergen, Norway</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.2</div>
+                        <div class="popup-header__rating-count">585 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/Solstrand1-small.jpg 350w, img/hotels/Solstrand1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Solstrand1.jpg">
+
+                        <img srcset="img/hotels/Solstrand2-small.jpg 350w, img/hotels/Solstrand2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Solstrand2.jpg">
+
+                        <img srcset="img/hotels/Solstrand3-small.jpg 350w, img/hotels/Solstrand3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/Solstrand3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$295/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            The Solstrand Hotel is situated next to a fjord, only 30 km south of Bergen City and Bergen airport. This historical hotel was built by Norway's first prime minister, Christian Michelsen in 1896, and is a beautiful resort in Swiss style. With a rich history, spectacular views, and a beautiful setting, Solstrand is a place for special occasions, whether it be a meeting, a celebration or just time to unplug. Solstrand's location is perfect for exploring the great Hardangerfjord, the glacier Folgefonna, or the cultural life in the city of Bergen.     
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa</li>
+                        <li class="popup-content__list-item">Business center</li>
+                        <li class="popup-content__list-item">Swimming pools</li>
+                        <li class="popup-content__list-item">Hot tub</li>
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurant/bar</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>                        
+                        <li class="popup-content__list-item">Free Breakfast</li> 
+                    </ul>                                                                  
+                </div>                
+            </div>
+            <!-- Four Seasons Hotel -->  
+            <div id="popup11" class="popup">
+                    <!-- header section -->                             
+                <div class="popup-header">
+                    <!-- heading -->
+                    <h1 class="popup-header__heading">
+                        Four Seasons 
+                    </h1>
+                    <!-- stars -->
+                    <div class="popup-header__stars">               
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>        
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>       
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>
+                        <svg class="popup-header__icon-star">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-star" 
+                                href="img/sprite.svg#icon-star">
+                            </use>
+                        </svg>                        
+                    </div> 
+                    <!-- location -->              
+                    <div class="popup-header__location">                        
+                        <svg class="popup-header__icon-location">
+                            <use 
+                                xlink:href="img/sprite.svg#icon-location-pin"
+                                href="img/sprite.svg#icon-location-pin">
+                            </use>
+                        </svg>                   
+                        <button class="btn-inline">Desroches, Seychelles</button>
+                    </div>
+                    <!-- rating -->
+                    <div class="popup-header__rating">
+                        <div class="popup-header__rating-average">9.5</div>
+                        <div class="popup-header__rating-count">163 votes</div>
+                    </div>
+                    <!-- close button -->
+                    <div class="popup-header__close">
+                        <a href="#">&times;</a>
+                    </div>                   
+                </div>
+                <!-- Popup content section-->
+                <div class="popup-content"> 
+                    <!-- gallery -->                   
+                    <div class="popup-content__gallery">                         
+                        <img srcset="img/hotels/4Seasons1-small.jpg 350w, img/hotels/4Seasons1.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/4Seasons1.jpg">
+
+                        <img srcset="img/hotels/4Seasons2-small.jpg 350w, img/hotels/4Seasons2.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/4Seasons2.jpg">
+
+                        <img srcset="img/hotels/4Seasons3-small.jpg 350w, img/hotels/4Seasons3.jpg 1500w" sizes="(max-width: 56.25em) 33vw, (max-width: 37.5em) 35vw" alt="Aman Venice" class="popup-content__photo" 
+                        src="img/hotels/4Seasons3.jpg">
+                    </div>
+                    <!-- sidebar -->                       
+                    <div class="popup-content__sidebar">                       
+                        <div class="popup-content__cta">
+                            <div class="top">                            
+                                <div class="popup-content__header">                                
+                                    <img src="img/logo.png" alt="trillo logo" class="logo">
+                                    <span>Trillo</span>                                                    
+                                </div>
+                                <div class="popup-content__prices">
+                                    <p>Our exclusive prices</p>
+                                    <p>start as low as</p>
+                                    <p>$1015/night</p>                             
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button class="btn">
+                                    <span class="btn__popup">Book now</span>
+                                </button> 
+                            </div>                                                      
+                        </div>
+                        <div class="popup-content__services"> 
+                            <div class="popup-content__services-header">                                
+                                <span>Included Services</span>
+                            </div> 
+                            <ul class="popup-content__services-list">
+                                <li class="popup-content__services-item">Customized itineraries</li>
+                                <li class="popup-content__services-item">Destination travel tips</li>
+                                <li class="popup-content__services-item">Unique experiences</li>
+                                <li class="popup-content__services-item">Local events/attractions</li>
+                                <li class="popup-content__services-item">24/7 assistance hot-line</li> 
+                            </ul>                                  
+                        </div>                           
+                    </div>
+                    <!-- hotel details -->                   
+                    <div class="popup-content__detail">
+                        <p class="paragraph">
+                            Four Seasons Resort Seychelles, the only resort on the 3.7 mile-long coral atoll of Desroches Island, offers modern suites, tropical gardens and 8.7 mi of palm-fringed, white-sand beaches. With a private beach and the shimmering waters of the Indian Ocean an array of water activities are available upon request, from snorkeling the coral reefs and diving to fishing and parasailing. Guests can relax at the spa which offers tailored wellness programs. Here there is nothing to distract you from tranquillity; only the sound of birds singing and an inviting ocean breeze. 
+                        </p>
+                    </div>
+                    <!-- amenities list -->                   
+                    <ul class="popup-content__list">
+                        <li class="popup-content__list-item">Fitness center/spa</li>
+                        <li class="popup-content__list-item">Tennis</li>
+                        <li class="popup-content__list-item">Swimming pools</li>
+                        <li class="popup-content__list-item">Scuba diving</li>
+                        <li class="popup-content__list-item">Room service</li>
+                        <li class="popup-content__list-item">Restaurant/bar</li>
+                        <li class="popup-content__list-item">Free WIFI/Cable</li>                        
+                        <li class="popup-content__list-item">Airport shuttle</li> 
+                    </ul>                                                                  
+                </div>                
+            </div>           
+        </div>                       
+    </body>
+</html>
