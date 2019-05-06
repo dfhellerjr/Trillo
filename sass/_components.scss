@@ -147,11 +147,11 @@
     // button on hover
     &__btn-close:hover
     {
-        font-size: 120%;
+        font-size: 110%;
         color: var(--color-primary-dark);
         padding-bottom: 2px;
         background-color: var(--color-grey-light-4);
-        transform: scale(1.1) translateY(2px);
+        transform: scale(1.1) translateY(-2px);
     }
 }
 
