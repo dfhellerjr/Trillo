@@ -237,11 +237,11 @@ body {
   .search__btn-close:focus {
     outline: none; }
   .search__btn-close:hover {
-    font-size: 120%;
+    font-size: 110%;
     color: var(--color-primary-dark);
     padding-bottom: 2px;
     background-color: var(--color-grey-light-4);
-    transform: scale(1.1) translateY(2px); }
+    transform: scale(1.1) translateY(-2px); }
 
 .suggestions {
   background-color: #fff;
