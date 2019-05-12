@@ -237,11 +237,11 @@ body {
   .search__btn-close:focus {
     outline: none; }
   .search__btn-close:hover {
-    font-size: 120%;
+    font-size: 110%;
     color: var(--color-primary-dark);
     padding-bottom: 2px;
     background-color: var(--color-grey-light-4);
-    transform: scale(1.1) translateY(2px); }
+    transform: scale(1.1) translateY(-2px); }
 
 .suggestions {
   background-color: #fff;
@@ -684,7 +684,6 @@ body {
         font-size: 1.25rem; } }
   .gallery__item:hover {
     transform: scale(1.15);
-    outline: .4rem solid #e7e4e4;
     box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
     transition: .5s;
     z-index: 1; }
@@ -693,7 +692,8 @@ body {
   .gallery__item:hover .gallery__caption {
     left: 50%;
     opacity: 2;
-    transition: 1s; }
+    transition: 1s;
+    border: 0; }
     @media only screen and (max-width: 25em) {
       .gallery__item:hover .gallery__caption {
         left: 53%; } }
