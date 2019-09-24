@@ -26,8 +26,7 @@
     @media only screen and (max-width: $bp-small) 
     {        
         flex: 0 0 80%;
-        order: 1;
-        
+        order: 1;        
         margin: 0 auto;
         margin-bottom: .5rem;
         border-top-right-radius: 100px;
@@ -55,8 +54,6 @@
         &:focus
         {
             outline: none;
-            // expand to full width
-            width: 100%;
             // slightly darken background
             background-color: #e7e4e4;
         }
@@ -78,10 +75,9 @@
     // next sibling (ie: button) of the input on focus
     &__input:focus + &__button
     {
-        // slightly darken background 
         background-color: #e7e4e4;
     }
-
+    
     // close button and suggestions drop-down are hidden when placeholder is being shown
     &__input:placeholder-shown ~ &__btn-close,
     &__input:placeholder-shown ~ .suggestions
@@ -89,15 +85,23 @@
         visibility: hidden;
     }
 
+    // search button displayed when placehold is visible
+    &__input:placeholder-shown ~ .search__button 
+    {
+        visibility: visible;
+    }    
+
     &__button
     {
         border: none;
         background-color: var(--color-grey-light-2);
         transition: all .2s;
+        visibility: hidden; 
 
         &:focus
         {
             outline: none;
+           // visibility: hidden; 
         }
 
         // show suggestions drop-down and close button on button focus
@@ -105,12 +109,11 @@
         &:focus ~ .search__btn-close          
         {
             visibility: visible;
-        }       
-
-        &:active
+        }
+          
+        &:hover
         {
-            // move button down slightly when active   
-            transform: translateY(2px);
+            transform: scale(1.1);
         }
     }
 
@@ -396,7 +399,7 @@
     }
 }
 
-// drop-down visible on hover
+// drop-down visible on focus
 .suggestions:focus 
 {
     visibility: visible;
@@ -1728,7 +1731,6 @@
         @media only screen and (max-width: $bp-smallest) 
         {           
             flex: 0 1 60%;
-            xpadding: 1rem 0 1rem 1rem;
         }  
     }
 
@@ -1989,6 +1991,7 @@
 
     &__close a 
     {
+        outline: none;
         text-decoration: none;
     }
 }
